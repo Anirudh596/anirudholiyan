@@ -44,6 +44,22 @@ const projects = [
     image: "/dizoro.png",
     vertical: false,
   },
+  {
+    title: "Elzzi",
+    description:
+      "An e-commerce site for accessories with responsive and modern UI offering a variety of mobile covers with a user-friendly design.",
+    link: "https://dizoro.in",
+    image: "/elzzi.png",
+    vertical: false,
+  },
+  {
+    title: "Kite Active",
+    description:
+      "An Travel Planner and Booker website with responsive design and I built this project in less time as well. Also i'm working on this project migrating to React",
+    link: "https://kiteactive.com",
+    image: "/kite.png",
+    vertical: false,
+  },
 ];
 
 const Projects: React.FC = () => {
