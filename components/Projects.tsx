@@ -1,5 +1,7 @@
-// components/Projects.tsx
+"use client";
 import React from "react";
+import Image from "next/image";
+import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 
 const projects = [
   {
@@ -7,35 +9,40 @@ const projects = [
     description:
       "A full-fledged e-commerce platform for a sanitary company with cross-platform support for iOS and Android.",
     link: "https://play.google.com/store/apps/details?id=com.ozone_india.ozoneindia&hl=en_IN&pli=1",
-    image: "/images/ozone.png",
-  },
-  {
-    title: "PowerFactorshop",
-    description:
-      "An app designed for an electrical goods company to streamline product browsing and purchase.",
-    link: "https://play.google.com/store/apps/details?id=com.powerfactorshop",
-    image: "/images/powerfactorshop.png",
+    image: "/ozone.png",
+    vertical: true,
   },
   {
     title: "FoneLane",
     description:
       "A marketplace for refurbished mobiles and accessories, built with React and Tailwind CSS.",
     link: "https://fonelane.com",
-    image: "/images/fonelane.png",
+    image: "/fonelane.png",
+    vertical: false,
   },
   {
     title: "Vonzee",
     description:
       "E-commerce site offering a variety of mobile covers with a user-friendly design.",
     link: "https://vonzee.in",
-    image: "/images/vonzee.png",
+    image: "/vonzee.png",
+    vertical: false,
+  },
+  {
+    title: "PowerFactorshop",
+    description:
+      "An app designed for an electrical goods company to streamline product browsing and purchase.",
+    link: "https://play.google.com/store/apps/details?id=com.powerfactorshop",
+    image: "/pfs.png",
+    vertical: true,
   },
   {
     title: "Dizoro",
     description:
       "An e-commerce site for accessories with responsive and modern UI.",
     link: "https://dizoro.in",
-    image: "/images/dizoro.png",
+    image: "/dizoro.png",
+    vertical: false,
   },
 ];
 
@@ -48,35 +55,38 @@ const Projects: React.FC = () => {
           These are some of my notable projects showcasing expertise in
           full-stack development and cross-platform applications.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <BentoGrid className="gap-6">
           {projects.map((project, index) => (
-            <div
+            <BentoGridItem
               key={index}
-              className="relative bg-black border border-gray-700 rounded-lg overflow-hidden shadow-md"
-            >
-              {/* Image Section */}
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover"
-              />
-
-              {/* Content Section */}
-              <div className="p-6 flex flex-col justify-between h-48">
-                <h3 className="text-xl font-semibold">{project.title}</h3>
-                <p className="mt-2 text-gray-400">{project.description}</p>
+              className={project.vertical ? "md:row-span-2" : "md:row-span-1"}
+              title={
                 <a
                   href={project.link}
-                  className="mt-4 inline-block text-purple-400 hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="hover:underline"
                 >
-                  View Project
+                  {project.title}
                 </a>
-              </div>
-            </div>
+              }
+              description={project.description}
+              header={
+                <div className="overflow-hidden rounded-lg">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={500}
+                    height={600}
+                    className={`w-full h-full object-fit ${
+                      project.vertical ? "aspect-[2/5]" : "aspect-[4/3]"
+                    }`}
+                  />
+                </div>
+              }
+            />
           ))}
-        </div>
+        </BentoGrid>
       </div>
     </section>
   );

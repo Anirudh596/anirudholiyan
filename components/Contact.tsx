@@ -1,4 +1,3 @@
-// components/Contact.tsx
 import React from "react";
 
 const Contact: React.FC = () => {
@@ -13,18 +12,21 @@ const Contact: React.FC = () => {
       </p>
       <div className="mt-6 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
         <a
+          target="_blank" 
           href="mailto:anirudhconnect0@gmail.com"
           className="text-purple-400 hover:underline"
         >
           Email: anirudhconnect0@gmail.com
         </a>
         <a
+          target="_blank"
           href="https://linkedin.com/in/anirudholiyan"
           className="text-purple-400 hover:underline"
         >
           LinkedIn
         </a>
         <a
+          target="_blank"
           href="https://github.com/Anirudh596"
           className="text-purple-400 hover:underline"
         >
