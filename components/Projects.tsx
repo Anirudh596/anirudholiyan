@@ -93,9 +93,9 @@ const Projects: React.FC = () => {
                     src={project.image}
                     alt={project.title}
                     width={500}
-                    height={600}
+                    height={500}
                     className={`w-full h-full object-fit ${
-                      project.vertical ? "aspect-[2/5]" : "aspect-[4/3]"
+                      project.vertical ? "aspect-[3/4]" : "aspect-[4/3]"
                     }`}
                   />
                 </div>

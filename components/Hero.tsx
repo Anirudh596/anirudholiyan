@@ -4,7 +4,12 @@ import { BackgroundLines } from "@/components/ui/background-lines";
 import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
 
 const Hero: React.FC = () => {
-  const words = [{ text: "Anirudh" }, { text: "Dholiyan" }];
+  const words = [
+    { text: "Hi," },
+    { text: "I'm" },
+    { text: "Anirudh" },
+    { text: "Dholiyan" },
+  ];
 
   return (
     <section
@@ -14,19 +19,11 @@ const Hero: React.FC = () => {
     >
       <BackgroundLines className="flex items-center justify-center w-full flex-col px-4">
         <div className="flex flex-col items-center justify-center w-full px-4 relative z-10">
-          <div className="flex flex-row items-center gap-4 md:gap-6">
-            <h1
-              id="hero-heading"
-              className="text-4xl sm:text-6xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-white to-gray-300 dark:from-gray-400 dark:to-gray-200"
-            >
-              Hi, I&#39;m
-            </h1>
-            <TypewriterEffectSmooth
-              className="text-4xl sm:text-6xl md:text-8xl font-bold"
-              words={words}
-            />
-          </div>
-          
+          <TypewriterEffectSmooth
+            className="text-3xl sm:text-6xl md:text-8xl font-bold"
+            words={words}
+          />
+
           <p className="mt-4 text-lg sm:text-xl md:text-2xl text-gray-100 dark:text-gray-300 max-w-2xl">
             Full-Stack Developer | Cross-Platform Specialist
           </p>
